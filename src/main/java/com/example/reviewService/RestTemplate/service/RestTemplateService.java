@@ -32,10 +32,11 @@ public class RestTemplateService {
 
         // status 코드와 , 바디를 같이 담아서 보낸다
         // **반환값을 DTO를 설정해주면 좋지만, LIST객체나 아직 반환값을 정확하게 모름**
-        ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+        ResponseEntity<UserResponse> result = restTemplate.getForEntity(uri, UserResponse.class);
 
         System.out.println(result.getStatusCode());
         System.out.println(result.getBody());
+
         System.out.println("result -------------"+result);
 //        return result.getBody();
         return null;
