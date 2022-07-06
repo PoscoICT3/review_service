@@ -5,11 +5,14 @@ package com.example.reviewService.review.controller;
 
 import com.example.reviewService.config.SecurityService;
 import com.example.reviewService.review.model.ReviewDto;
+import com.example.reviewService.review.model.ReviewRateDto;
 import com.example.reviewService.review.service.ReviewServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("review")
@@ -52,4 +55,11 @@ public class ReviewController {
         System.out.println("count.............................."+userId+count);
         return count;
     }
+
+    @GetMapping("/shoprate")
+    public List<ReviewRateDto> getShopRate()
+    {
+        return reviewService.getShopRate();
+    }
+
 }

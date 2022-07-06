@@ -17,6 +17,12 @@
         where userId = #{userId}
     </select>
 
+    <select id="getShopRate" resultType="ReviewRateDto">
+        select shopId, avg(rate) as rate
+        from review
+        group by shopId
+    </select>
+
 
 
 </mapper>
