@@ -33,4 +33,9 @@ public class ReviewServiceImpl implements reviewService {
     public List<ReviewRateDto> getShopRate() {
         return reviewMapper.getShopRate();
     }
+
+    @Override
+    public List<ReviewDto> getReviewByShopId(Integer id) {
+        return reviewMapper.getReviewByShopId(id);
+    }
 }

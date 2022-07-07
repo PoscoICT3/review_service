@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("review")
+@RequestMapping("/review")
 public class ReviewController {
 
     // review 는 userId(토큰값에서 가져오기, user테이블에서 id번호임), shopId(세영이 리스트에서 클릭했을때 받아오기)
@@ -59,7 +59,19 @@ public class ReviewController {
     @GetMapping("/shoprate")
     public List<ReviewRateDto> getShopRate()
     {
+        System.out.println(reviewService.getShopRate());
+
         return reviewService.getShopRate();
     }
+    @GetMapping("detail/{id}")
+    public List<ReviewDto> getReviewByShopId(@PathVariable String id){
+        ReviewDto reviewDto = new ReviewDto();
+        reviewDto.setShopId(Integer.valueOf(id));
+
+        List<ReviewDto> reviewDtos = reviewService.getReviewByShopId(Integer.valueOf(id));
+
+        return reviewDtos;
+    }
+
 
 }

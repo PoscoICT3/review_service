@@ -14,4 +14,5 @@ public interface ReviewMapper {
     Integer countByUserId(Integer userId);
 
     List<ReviewRateDto> getShopRate();
+    List<ReviewDto> getReviewByShopId(Integer id);
 }

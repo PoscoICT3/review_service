@@ -11,4 +11,5 @@ public interface reviewService {
     Integer countReview(Integer userId);
 
     List<ReviewRateDto> getShopRate();
+    List<ReviewDto> getReviewByShopId(Integer id);
 }
