@@ -30,8 +30,8 @@ public class ReviewController {
 
 
         reviewDto.setShopId(Integer.valueOf(reviewDto.getShopId())); // list를 눌렀을때 shopId가 넘어온다
-//        reviewDto.setUserId(securityService.getIdAtToken());
-        reviewDto.setUserId(reviewDto.getUserId());
+        reviewDto.setUserId(securityService.getIdAtToken());
+//        reviewDto.setUserId(reviewDto.getUserId());
         reviewDto.setRate(Integer.valueOf(reviewDto.getRate()));
 
 
@@ -50,9 +50,9 @@ public class ReviewController {
     public Integer countReview(){
         System.out.println("count..............................");
         Integer userId = securityService.getIdAtToken();
-
-        Integer count = reviewService.countReview(userId);
-        System.out.println("count.............................."+userId+count);
+        System.out.println(userId);
+        Integer count = reviewService.countByUserId(userId);
+        System.out.println(count);
         return count;
     }
 

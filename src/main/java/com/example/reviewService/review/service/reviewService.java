@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface reviewService {
     Boolean createReview(ReviewDto reviewDto);
-    Integer countReview(Integer userId);
+    Integer countByUserId(Integer userId);
 
     List<ReviewRateDto> getShopRate();
     List<ReviewDto> getReviewByShopId(Integer id);

@@ -10,8 +10,10 @@
             (#{userId},#{shopId}, #{rate},#{content}, #{photo})
 
     </insert>
-    <select id="countReview" parameterType="int">
-        select count *
+
+
+    <select id="countByUserId" parameterType="int" resultType="int">
+        select count(*)
         from review
         where userId = #{userId}
     </select>

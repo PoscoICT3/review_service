@@ -25,7 +25,7 @@ public class ReviewServiceImpl implements reviewService {
     }
 
     @Override
-    public Integer countReview(Integer userId) {
+    public Integer countByUserId(Integer userId) {
         return reviewMapper.countByUserId(userId);
     }
 
